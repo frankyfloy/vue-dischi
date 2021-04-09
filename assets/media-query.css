@@ -4,4 +4,9 @@
         width: 100%;
         margin: 0;
     }
+
+    #cardList{
+        justify-content: center;
+    }
+
 }
