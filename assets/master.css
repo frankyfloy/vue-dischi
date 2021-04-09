@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-size:100%;
+}
+
+/* Property general */
+label{
+    margin: 0;
+}
+
+
+body{
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Ubuntu', sans-serif;
+    text-rendering: optimizeLegibility;
+    background-image: linear-gradient(0deg, #000000 0%, #414141 150%);
+    background-color: #dfdfdf;
+    background-repeat: no-repeat;
+    min-width: 750px;
+    overflow:  hidden;
+    min-width: 820px;
+}
+
+/* Contenitore Root */
+#root{
+    height: 95vh;
+    width: 70vw;
+    min-width: 820px;
+    margin: 21px auto 0 auto;
+    padding: 20px 40px;
+    box-shadow: 0px 1px 13px #888888;
+    background-color: #F3EEEA;
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 10px;
+}
+
+nav{
+    width: 100%;
+    margin-bottom: 25px;
+    background-image: linear-gradient(0deg, #000000 0%, #414141 150%);
+    padding: 15px;
+    display: flex;
+
+
+    border-radius: 10px;
+}
+
+/* nav select{
+    font-size: 1.3rem;
+} */
+
+nav .input-group{
+    width: max-content;
+    margin: auto;
+}
+
+.card{
+    border: none;
+    background-color: transparent;
+    display: flex;
+	display: -webkit-flex;
+	flex-direction: column wrap;
+	-webkit-flex-direction: column wrap;
+    align-items: stretch;
+    padding: 20px;
+    flex: 0 0 250px;
+    justify-content: center;
+    color: #414141;
+}
+
+#cardList{
+    margin: 20px 0;
+    width: 100%;
+    list-style: none;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+#cardList > li{
+    padding: 10px 0;
+    font-size: 25px;
+    color: #009788;
+    /* text-shadow: 1px 1px 1px #000000;
+    box-shadow: 0px 1px 2px #009788; */
+    width: 300px;
+}
+
+
+#imgHeader{
+    height: 100%;
+    display: flex;
+}
+
+#imgHeader > i{
+    font-size: 500px;
+    color: #009788;
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: 2px 2px 10px 14px #009788;
+}
+
+
+
+nav > button{
+    text-shadow: 1px 1px 1px #000000;
+    border-color: rgba(0,0,0,0.84);
+    box-shadow: 5px 5px 6px #888888;
+    color: #F3EEEA;
+}
+
+button:active{
+    outline: none;
+}
+
+button:focus{
+    outline: none;
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+
+.bg-green{
+    background-color: #009788;
+}
+
+
+
+/* ---------------Scroll Vertical (Classe Scroll)------------------------- */
+.scroll{
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.scroll::-webkit-scrollbar{
+	-webkit-overflow-scrolling: auto;
+	width: 4px;
+}
+.scroll::-webkit-scrollbar-thumb{
+	border-radius: 4px;
+    background-color: #009788;
+    box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+/* ------------------------------------------------------------- */
