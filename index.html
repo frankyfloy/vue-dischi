@@ -30,13 +30,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
-
-
     </head>
 
     <body>
         <div id="root">
-
             <nav >
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -44,23 +41,28 @@
                     </div>
                     <select v-model="selected" @change="findForGenre">
                         <option value="">All</option>
-                        <option v-for="(item) in genre" :value="item">{{item}}</option>
+                        <option v-for="item in genre" :value="item">{{item}}</option>
                     </select>
+
+                    <button @click="sortList" class="btn-grey ml-3 p-lr">
+                        Ordina per anno
+                        <i class="fas" :class= "(flag) ? 'fa-arrow-up' : 'fa-arrow-down'"></i>
+                    </button>
                 </div>
             </nav>
 
             <ol id="cardList" class="scroll">
-                <li v-for="(item) in arrtracksFiltered">
+                <li v-for="item in tracksFiltered">
                     <div class="card animate__animated animate__zoomIn animate__slow">
                       <img :src="item.poster" class="card-img-top" alt="...">
                       <!-- <button type="button">
                           <i class="fa fa-play-circle fa-3x"></i>
                       </button> -->
-                      <!-- <div class="card-body">
+                      <div class="card-body">
                         <h4 class="card-title">{{item.title}}</h4>
                         <p class="card-text"><small>{{item.author}}</small></p>
                         <p class="card-text"><small>{{item.year}}</small></p>
-                      </div> -->
+                      </div>
                     </div>
                 </li>
             </ol>

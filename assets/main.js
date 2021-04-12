@@ -8,14 +8,25 @@ var app = new Vue({
         genre : [],
         arrtracksFiltered : [],
         selected: "",
+        flag: true,
     },
 
     mounted:function () {
-        this.initArrtracks();
+        this.initArrtracks()
+    },
+
+    computed: {
+        tracksFiltered(){
+            if (!this.selected.length) {
+                this.arrtracksFiltered = this.arrtracks
+            }
+            return this.arrtracksFiltered
+        }
     },
 
     methods: {
-        initArrtracks : function() {
+
+        initArrtracks(){
             axios.get('https://flynn.boolean.careers/exercises/api/array/music')
             .then((response)  => {
                 if (response.data.success) {
@@ -26,22 +37,30 @@ var app = new Vue({
                             this.genre.push(element.genre);
                         }
                     })
-                    this.arrtracksFiltered = this.arrtracks.slice();
                 }
             })
         },
 
         findForGenre: function(){
             // Update track on select All
-            if (this.selected === "") {
-                this.arrtracksFiltered = this.initArrtracks();
+            if (!this.selected.length) {
+                this.initArrtracks();
+            }else {
+                this.arrtracksFiltered = this.arrtracks.filter((element) => {
+                    if (this.selected === element.genre) {
+                        return element;
+                    }
+                })
             }
-
-            this.arrtracksFiltered = this.arrtracks.filter((element) => {
-                if (this.selected === element.genre) {
-                    return element;
-                }
-            })
         },
+        sortList: function(){
+            if (this.flag) {
+                this.flag = !this.flag;
+                this.arrtracksFiltered.sort((a, b) => a.year - b.year ).reverse();
+            }else {
+                this.flag = !this.flag;
+                this.arrtracksFiltered.sort((a, b) => a.year - b.year );
+            }
+        }
     },
 })

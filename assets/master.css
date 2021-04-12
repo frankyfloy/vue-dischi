@@ -34,8 +34,8 @@ body{
     min-width: 820px;
     margin: auto;
     padding: 20px 40px;
-    box-shadow: 0px 1px 13px #888888;
-    background-color: #F3EEEA;
+    box-shadow: 0px 1px 7px #888888;
+    background-color: darkgrey;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -57,17 +57,41 @@ nav .input-group{
 
 .card{
     border: none;
-    background-color: transparent;
+    background-image: linear-gradient(0deg, #000000 0%, #414141 150%);
     display: flex;
-	display: -webkit-flex;
-	flex-direction: column wrap;
-	-webkit-flex-direction: column wrap;
+    display: -webkit-flex;
+    flex-direction: column wrap;
+    -webkit-flex-direction: column wrap;
     align-items: stretch;
     padding: 20px;
     flex: 0 0 250px;
     justify-content: center;
-    color: white;
+    color: #e9ecef;
+    max-width: 330px;
+    border-radius: 20px;
+    margin: 10px 20px;
 }
+
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: max-content;
+    margin-top: 12px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #888888;
+}
+
+
+.card-body h4{
+    height: 50px;
+}
+
+
+
+
 
 #cardList{
     margin: 20px 0;
@@ -88,8 +112,8 @@ nav .input-group{
 }
 
 #cardList > li img{
-    height: 300px;
-    width: 300px;
+    max-width: 100%;
+    min-height: 300px;
 }
 
 nav > button{
@@ -109,6 +133,13 @@ button:focus{
     transition: 0.3s;
 } */
 
+.p-lr{
+    padding: 0 10px;
+}
+
+.btn-grey{
+    background-color: #e9ecef;
+}
 
 /* ---------------Scroll Vertical (Classe Scroll)------------------------- */
 .scroll{
